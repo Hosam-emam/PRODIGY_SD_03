@@ -99,8 +99,7 @@ public class MyFile {
     public boolean deleteFile(int num,int lastFileNum){
         if(lastFileNum == 1){
             this.file = new File("Contacts\\Contact 1.txt");
-            this.file.delete();
-            return true;
+            return this.file.delete();
         }
         else{
             for(int i = num; i < lastFileNum; i++){
@@ -128,8 +127,8 @@ public class MyFile {
                     this.data.clear();
             }
             this.file = new File("Contacts\\Contact " +lastFileNum + ".txt");
-            this.file.delete();
-            return true;
+
+            return this.file.delete();
         }
     }
     public int getNo_of_files(){

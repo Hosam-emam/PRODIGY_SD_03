@@ -31,10 +31,20 @@ public class User {
             System.out.println("Please, fill in the new contact's information.");
             System.out.print("New Name: ");
             this.data.add(this.sc.nextLine());
-            System.out.print("New Phone Number: ");
-            this.data.add(this.sc.nextLine());
-            System.out.print("New Email: ");
-            this.data.add(this.sc.nextLine());
+            String phone_number;
+            System.out.println("Please, enter an 11 digit number");
+            do{
+                System.out.print("New Phone Number: ");
+                phone_number = this.sc.nextLine();
+            }while(phone_number.length() != 11);
+            this.data.add(phoneNumber);
+            String email;
+            System.out.println("Enter a formal email address containing (@) and (.com)");
+            do{
+                System.out.print("New Email: ");
+                email = this.sc.nextLine();
+            }while(!email.contains("@") && !email.contains(".com"));
+            this.data.add(email);
             if(this.myfile.editFile(file_number,this.data)){
                 System.out.println("The file has been updated successfully!");
             }else{

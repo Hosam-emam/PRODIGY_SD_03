@@ -12,10 +12,20 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter the Contact's Name: ");
         data.add(scan.nextLine());
-        System.out.print("His Phone Number: ");
-        data.add(scan.nextLine());
-        System.out.print("His Email: ");
-        data.add(scan.nextLine());
+        String phone_number;
+        System.out.println("Please, enter an 11 digit number.");
+        do{
+            System.out.print("His Phone Number: ");
+            phone_number = scan.nextLine();
+        }while(phone_number.length() != 11);
+        data.add(phone_number);
+        String email;
+        System.out.println("Enter a formal email address containing (@) and (.com).");
+        do{
+            System.out.print("His Email: ");
+            email = scan.nextLine();
+        }while(!email.contains("@") && !email.contains(".com"));
+        data.add(email);
         return data;
     }
     public static void main(String[] args) {
