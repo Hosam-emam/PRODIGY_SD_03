@@ -1,7 +1,4 @@
 package Files;
-
-import Files.MyFile;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -43,7 +40,7 @@ public class User {
             do{
                 System.out.print("New Email: ");
                 email = this.sc.nextLine();
-            }while(!email.contains("@") && !email.contains(".com"));
+            }while(!email.contains("@") || !email.contains(".com"));
             this.data.add(email);
             if(this.myfile.editFile(file_number,this.data)){
                 System.out.println("The file has been updated successfully!");
