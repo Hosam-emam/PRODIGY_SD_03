@@ -24,7 +24,7 @@ public class Main {
         do{
             System.out.print("His Email: ");
             email = scan.nextLine();
-        }while(!email.contains("@") && !email.contains(".com"));
+        }while(!email.contains("@") || !email.contains(".com"));
         data.add(email);
         return data;
     }
